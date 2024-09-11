@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manorama Enclave - Dwaraka Builders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('finloans-logo.jpg');
+            background-size: contain;
+            background-position: top;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 2cm;
+            height: 2cm;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        .project-details {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        label, input, select, button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .thank-you-message, .password-section, .restricted, .pdf-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .pdf-links a {
+            display: block;
+            margin: 10px 0;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        .unrestricted a {
+            background-color: #28a745; /* Green for unrestricted documents */
+            color: white;
+        }
+        .restricted a {
+            background-color: #dc3545; /* Red for restricted documents */
+            color: white;
+        }
+        .letterhead {
+            font-family: 'Times New Roman', Times, serif;
+            border: 2px solid #000;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #f7f7f7;
+        }
+        .contact-info {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #FF0000;
+        }
+        .contact-info a {
+            color: #FF0000;
+            text-decoration: none;
+        }
+        .important-message {
+            color: red;
+            font-weight: bold;
+        }
+        .red-bold {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- FinLoans Logo -->
+        <img src="finloans-logo.jpg" alt="FinLoans Logo" class="logo">
+
+        <!-- Project Details in Bold -->
+        <div class="project-details">
+            <p>Builder Name: Dwaraka Builders</p>
+            <p>Project Name: Manorama Enclave</p>
+            <p>Promoter Name: Sitesh Agarwalla</p>
+            <p>Construction: New Construction of [S+5] Residential, Medium Income Housing</p>
+            <p>No. of Residential Units: 40</p>
+            <p>Site: Dhenkanal, Odisha</p>
+        </div>
+
+        <!-- Borrower Contact Form -->
+        <div class="form-section">
+            <h2 class="red-bold">Apply for the Best Housing Loan Deals with FinLoans</h2>
+            <p class="important-message">To see the important documents of the project, like the building plan, site plan, layout plan, ROR, EC, kindly fill in the details and submit the form:</p>
+            <form id="borrower-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="loan-amount">Home Loan Amount Required (INR):</label>
+                <input type="number" id="loan-amount" name="loanAmount" required>
+
+                <label for="bank">Preferred Bank:</label>
+                <input type="text" id="bank" name="bank" required>
+
+                <button type="submit">Submit Application</button>
+
+                <!-- Thank You Section -->
+                <div class="thank-you-message letterhead" id="thank-you-message" style="display: none;">
+                    <h1 class="red-bold">FinLoans Services Pvt Ltd</h1>
+                    <p class="red-bold">A Brand of FinGroup Services Pvt Ltd</p>
+                    <p>Thank you for connecting with FinLoans. A mail has been sent to your email address with the password to access restricted documents.</p>
+                    <p>Best Regards,<br> Team FinLoans</p>
+                </div>
+
+                <!-- Password Prompt for Restricted PDFs -->
+                <div class="password-section" id="password-section" style="display: none;">
+                    <label for="password" class="red-bold">Enter Password to Access Restricted PDFs:</label>
+                    <input type="password" id="password" placeholder="Enter password">
+                    <button id="check-password">Submit Password</button>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Restricted PDFs Section (Red Color) -->
+        <div class="restricted pdf-links" id="restricted-content" style="display: none;">
+            <h3>Restricted Documents</h3>
+            <a href="buildingplanapproval.pdf" target="_blank">Building Plan Approval</a>
+            <a href="buildingdrawingplan.pdf" target="_blank">Building Drawing Plan</a>
+            <a href="layoutplan.pdf" target="_blank">Layout Plan</a>
+            <a href="ror1stplot.pdf" target="_blank">ROR 1st Plot</a>
+            <a href="ec1stplot.pdf" target="_blank">EC 1st Plot</a>
+            <a href="locationmap.pdf" target="_blank">Location Map</a>
+        </div>
+
+        <!-- Unrestricted PDFs Section (Green Color) -->
+        <div class="pdf-section unrestricted">
+            <h2>Unrestricted Documents</h2>
+            <div class="pdf-links">
+                <a href="promoterdetails.pdf" target="_blank">1. Promoter Details</a>
+                <a href="advocatereport1stplot.pdf" target="_blank">6. Advocate Report 1st Plot</a>
+                <a href="advocatereport2ndplot.pdf" target="_blank">7. Advocate Report 2nd Plot</a>
+                <a href="ror2ndplot.pdf" target="_blank">9. ROR 2nd Plot</a>
+                <a href="ec2ndplot.pdf" target="_blank">11. EC 2nd Plot</a>
+                <a href="nocwater.pdf" target="_blank">13. NOC Water</a>
+                <a href="nocelectricity.pdf" target="_blank">14. NOC Electricity</a>
+                <a href="formatdeedofconveyance.pdf" target="_blank">16. Format Deed of Conveyance</a>
+                <a href="formatagreementforsale.pdf" target="_blank">15. Format Agreement for Sale</a>
+                <a href="siteplandrawing.pdf" target="_blank">Site Plan Drawing</a>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <p class="red-bold">FinLoans Services Pvt Ltd, a Brand of FinGroup Services Pvt Ltd<br>
+            Mobile: 9827603070 | Email: <a href="mailto:support@finloans.in">support@finloans.in</a><br>
+            Website: <a href="https://www.finloans.in">www.finloans.in</a></p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="form-handler.js"></script>
+
+</body>
+</html>
+
+
+
